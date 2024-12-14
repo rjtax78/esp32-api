@@ -2,11 +2,11 @@ import pg from 'pg'
 
 const Pool = pg.Pool
 
-const connectionString =
-  "postgresql://postgres:esp32-node@db.ekaferyxhpjbxgfqpgdu.supabase.co:5432/postgres";
-
 const connectDb = new Pool({
-  connectionString,
+  user: 'postgres',
+  host: 'db.ekaferyxhpjbxgfqpgdu.supabase.co',  // Adresse IPv4 au lieu d'IPv6
+  database: 'postgres',
+  password: 'esp32-node',
+  port: 5432,
 });
-
 export default connectDb
